@@ -1,0 +1,23 @@
+[req]
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+
+[req_distinguished_name]
+countryName = Country Name (2 letter code)
+countryName_default = CN
+stateOrProvinceName = State or Province Name (full name)
+stateOrProvinceName_default = MN
+localityName = Locality Name (eg, city)
+localityName_default = node
+organizationalUnitName  = Organizational Unit Name (eg, section)
+organizationalUnitName_default  = node
+commonName = node
+
+[ v3_req ]
+# Extensions to add to a certificate request
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, keyCertSign, digitalSignature, keyEncipherment, cRLSign
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1= www.baidu.com
