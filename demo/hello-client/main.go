@@ -19,7 +19,7 @@ func withConfigDir(path string) string {
 }
 
 func main() {
-	serverAddr := flag.String("server-addr", "www.baidu.com:10000", "remote hello server address")
+	serverAddr := flag.String("server-addr", "www.miao.com:10000", "remote hello server address")
 	tlsCrt := flag.String("tls-crt", withConfigDir("node.crt"), "client certificate file")
 	tlsKey := flag.String("tls-key", withConfigDir("node.key"), "client private key file")
 	//caCrt := flag.String("ca-crt", withConfigDir("../A/server.crt"), "CA certificate file")

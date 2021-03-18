@@ -18,17 +18,17 @@ rm n3/node.key
 rm n3/node.crt
 rm n3/node.csr
 
-cd ./root
+cd ./root || exit
 ./ca.sh
-cd ../A
+cd ../A || exit
 ./server.sh
 cat ../root/ca.crt  >> server.crt
-cd ../B
+cd ../B || exit
 ./server.sh
 cat ../root/ca.crt  >> server.crt
-cd ../n1
+cd ../n1 || exit
 ./node.sh
 cat ../A/server.crt >> node.crt
-cd ../n3
+cd ../n3 || exit
 ./node.sh
 cat ../B/server.crt >> node.crt

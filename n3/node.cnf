@@ -20,4 +20,4 @@ keyUsage = nonRepudiation, keyCertSign, digitalSignature, keyEncipherment, cRLSi
 subjectAltName = @alt_names
 
 [alt_names]
-DNS.1= www.baidu.com
+DNS.1= www.miao.com
