@@ -21,3 +21,5 @@ subjectAltName = @alt_names
 
 [alt_names]
 DNS.1= www.miao.com
+IP.1=
+IP.2=
