@@ -18,14 +18,13 @@ import (
 )
 
 func withConfigDir(path string) string {
-	return filepath.Join("/Users/gy/Desktop/ucc/ca/root/midA/node1", path)
+	return filepath.Join("/Users/gy/Desktop/openssl-grpc-tls-cert-chain-go/n1", path)
 }
-
 func main() {
 	listenAddr := flag.String("listen-addr", "127.0.0.1:10000", "hello server listen address")
-	tlsCrt := flag.String("tls-crt", withConfigDir("node1.crt"), "hello server certificate file")
-	tlsKey := flag.String("tls-key", withConfigDir("privateKey.pem"), "hello server private key file")
-	caRootCrt := flag.String("ca-root", withConfigDir("../../rootCA.crt"), "CA certificate file")
+	tlsCrt := flag.String("tls-crt", withConfigDir("node.crt"), "hello server certificate file")
+	tlsKey := flag.String("tls-key", withConfigDir("node.key"), "hello server private key file")
+	caRootCrt := flag.String("ca-root", withConfigDir("../root/ca.crt"), "CA certificate file")
 	flag.Parse()
 
 	logger := log.New(os.Stderr, "hello: ", log.LstdFlags)
