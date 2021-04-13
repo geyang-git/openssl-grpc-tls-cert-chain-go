@@ -1,7 +1,13 @@
 #!/usr/local/bin/expect -f
-spawn openssl ecparam -genkey -name SM2 -out pri.key
-spawn openssl pkcs8 -topk8 -inform PEM -in pri.key -nocrypt -out node.key
-spawn openssl req -new -sm3 -key node.key -out node.csr -config node.cnf -extensions v3_req
+spawn openssl genrsa -des3 -out node.key 1024
+expect "Enter*"
+send "null\r"
+expect "Verifying*"
+send "null\r"
+spawn openssl rsa -in node.key -out node.key
+expect "Enter*"
+send "null\r"
+spawn openssl req -new -key node.key -out node.csr -config node.cnf -extensions v3_req
 send "\r"
 send "\r"
 send "\r"

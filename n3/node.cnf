@@ -16,10 +16,8 @@ commonName = node
 [ v3_req ]
 # Extensions to add to a certificate request
 basicConstraints = CA:FALSE
-keyUsage = keyCertSign, cRLSign
-extendedKeyUsage=serverAuth,clientAuth
+keyUsage = nonRepudiation, keyCertSign, digitalSignature, keyEncipherment, cRLSign
 subjectAltName = @alt_names
 
 [alt_names]
-DNS.1= test.example.com
-IP.1=127.0.0.1
+DNS.1= www.miao.com
